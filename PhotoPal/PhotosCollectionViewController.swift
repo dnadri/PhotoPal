@@ -26,24 +26,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         layout.minimumLineSpacing = 1.0
         collectionView!.collectionViewLayout = layout
         
-        let oauth = OAuth2Swift(
-            consumerKey:    Constants.consumerKey,
-            consumerSecret: Constants.consumerSecret,
-            authorizeUrl:   "https://api.instagram.com/oauth/authorize",
-            responseType:   "code"
-        )
-        oauth.authorizeWithCallbackURL(
-            NSURL(string: "https://www.instagram.com/")!,
-            scope: "",
-            state: "INSTAGRAM",
-            success: { credential, response, paramaters in
-                print(credential.oauth_token)
-            },
-            failure: { error in
-                print("OAuth2 Error: \(error.localizedDescription)")
-            }
-        )
-        
+        runOauth()
         
     }
     
@@ -51,6 +34,32 @@ class PhotosCollectionViewController: UICollectionViewController {
         super.viewWillAppear(true)
         
         //NativeAPIClient: retrieve photos
+    }
+    
+    func runOauth() {
+        let oauth = OAuth2Swift(
+            consumerKey:    Constants.consumerKey,
+            consumerSecret: Constants.consumerSecret,
+            authorizeUrl:   "https://api.instagram.com/oauth/authorize",
+            responseType:   "token"
+            // or
+            // accessTokenUrl: "https://api.instagram.com/oauth/access_token",
+            // responseType:   "code"
+        )
+        
+        oauth.authorize_url_handler = WebViewController()
+        print("authorized_url_handler...")
+        oauth.authorizeWithCallbackURL(
+            NSURL(string: "https://instagram.com/")!,
+            scope: "",
+            state: "INSTAGRAM",
+            success: { credential, response, paramaters in
+                print("token: \(credential.oauth_token)")
+            },
+            failure: { error in
+                print("OAuth2 Error: \(error.localizedDescription)")
+            }
+        )
     }
     
     // - MARK: UICollectionViewDelegate
