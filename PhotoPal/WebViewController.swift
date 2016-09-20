@@ -46,7 +46,7 @@ class WebViewController: OAuthWebViewController, UIWebViewDelegate {
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if let url = request.URL {
             print("***shouldStartLoadWithRequest: requestURL: \(url)***")
-            UIApplication.sharedApplication().
+//            UIApplication.sharedApplication().openURL(NSURL(string: "http://www.google.com")!)
             // Call here AppDelegate.sharedInstance.applicationHandleOpenURL(url) if necessary ie. if AppDelegate not configured to handle URL scheme
             // compare the url with your own custom provided one in `authorizeWithCallbackURL`
             //self.dismissWebViewController()
