@@ -1,0 +1,6 @@
+framework module Pods_PhotoPal {
+  umbrella header "Pods-PhotoPal-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "81CF173C40A35A51BD6CF3F4580804424013B012",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "81CF173C40A35A51BD6CF3F4580804424013B012" : 0,
+    "6B04F9A6871D534E84EBDEC1FB2E95965B2891EE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7692F168-7328-473F-95A2-A57554790E9D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "81CF173C40A35A51BD6CF3F4580804424013B012" : "Swift-Projects\/",
+    "6B04F9A6871D534E84EBDEC1FB2E95965B2891EE" : "Swift-Projects\/PhotoPal\/PhotoPal\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PhotoPal",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PhotoPal\/PhotoPal.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:dnadri\/PhotoPal.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6B04F9A6871D534E84EBDEC1FB2E95965B2891EE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dnadri\/Swift-Projects.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "81CF173C40A35A51BD6CF3F4580804424013B012"
+    }
+  ]
+}

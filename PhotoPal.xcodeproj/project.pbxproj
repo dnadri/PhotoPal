@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7163CB891D90C35F00DEEA5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CB881D90C35F00DEEA5C /* AppDelegate.swift */; };
+		7163CB8E1D90C35F00DEEA5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7163CB8C1D90C35F00DEEA5C /* Main.storyboard */; };
+		7163CB901D90C35F00DEEA5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7163CB8F1D90C35F00DEEA5C /* Assets.xcassets */; };
+		7163CB931D90C35F00DEEA5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7163CB911D90C35F00DEEA5C /* LaunchScreen.storyboard */; };
+		7163CB9E1D90C36000DEEA5C /* PhotoPalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CB9D1D90C36000DEEA5C /* PhotoPalTests.swift */; };
+		7163CBA91D90C36000DEEA5C /* PhotoPalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBA81D90C36000DEEA5C /* PhotoPalUITests.swift */; };
+		7163CBB71D90C77C00DEEA5C /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBB61D90C77C00DEEA5C /* PhotosCollectionViewController.swift */; };
+		7163CBB91D90CEA400DEEA5C /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBB81D90CEA400DEEA5C /* PhotoDetailViewController.swift */; };
+		7163CBBB1D90E07300DEEA5C /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBBA1D90E07300DEEA5C /* PhotoCell.swift */; };
+		7163CBC31D90E87D00DEEA5C /* InstagramAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBC21D90E87D00DEEA5C /* InstagramAPIClient.swift */; };
+		7163CBC51D90EBAB00DEEA5C /* NativeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBC41D90EBAB00DEEA5C /* NativeAPIClient.swift */; };
+		7163CBC71D90F15D00DEEA5C /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBC61D90F15D00DEEA5C /* Media.swift */; };
+		71E5ECAB1D91070C00629268 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5ECA91D91004D00629268 /* Constants.swift */; };
+		DA5636DF98B8ABCD695E3857 /* Pods_PhotoPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939B9DA8814148F3AD622B6B /* Pods_PhotoPal.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7163CB9A1D90C36000DEEA5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7163CB7D1D90C35F00DEEA5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7163CB841D90C35F00DEEA5C;
+			remoteInfo = PhotoPal;
+		};
+		7163CBA51D90C36000DEEA5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7163CB7D1D90C35F00DEEA5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7163CB841D90C35F00DEEA5C;
+			remoteInfo = PhotoPal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4B7DE6471C2E01B0E70F25B8 /* Pods-PhotoPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoPal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoPal/Pods-PhotoPal.debug.xcconfig"; sourceTree = "<group>"; };
+		7163CB851D90C35F00DEEA5C /* PhotoPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7163CB881D90C35F00DEEA5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7163CB8D1D90C35F00DEEA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7163CB8F1D90C35F00DEEA5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7163CB921D90C35F00DEEA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7163CB941D90C35F00DEEA5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7163CB991D90C36000DEEA5C /* PhotoPalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoPalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7163CB9D1D90C36000DEEA5C /* PhotoPalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPalTests.swift; sourceTree = "<group>"; };
+		7163CB9F1D90C36000DEEA5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7163CBA41D90C36000DEEA5C /* PhotoPalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoPalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7163CBA81D90C36000DEEA5C /* PhotoPalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPalUITests.swift; sourceTree = "<group>"; };
+		7163CBAA1D90C36000DEEA5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7163CBB61D90C77C00DEEA5C /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		7163CBB81D90CEA400DEEA5C /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoDetailViewController.swift; path = ../PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		7163CBBA1D90E07300DEEA5C /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		7163CBC21D90E87D00DEEA5C /* InstagramAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAPIClient.swift; sourceTree = "<group>"; };
+		7163CBC41D90EBAB00DEEA5C /* NativeAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAPIClient.swift; sourceTree = "<group>"; };
+		7163CBC61D90F15D00DEEA5C /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		71E5ECA91D91004D00629268 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8297A5AB53D95173788F4965 /* Pods-PhotoPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoPal.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoPal/Pods-PhotoPal.release.xcconfig"; sourceTree = "<group>"; };
+		939B9DA8814148F3AD622B6B /* Pods_PhotoPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7163CB821D90C35F00DEEA5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5636DF98B8ABCD695E3857 /* Pods_PhotoPal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7163CB961D90C36000DEEA5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7163CBA11D90C36000DEEA5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48F09B24A21DF9D8BC75BE5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				939B9DA8814148F3AD622B6B /* Pods_PhotoPal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68CAA66FE0E064A39E0BAEC6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B7DE6471C2E01B0E70F25B8 /* Pods-PhotoPal.debug.xcconfig */,
+				8297A5AB53D95173788F4965 /* Pods-PhotoPal.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7163CB7C1D90C35F00DEEA5C = {
+			isa = PBXGroup;
+			children = (
+				7163CB871D90C35F00DEEA5C /* PhotoPal */,
+				7163CB9C1D90C36000DEEA5C /* PhotoPalTests */,
+				7163CBA71D90C36000DEEA5C /* PhotoPalUITests */,
+				7163CB861D90C35F00DEEA5C /* Products */,
+				68CAA66FE0E064A39E0BAEC6 /* Pods */,
+				48F09B24A21DF9D8BC75BE5F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7163CB861D90C35F00DEEA5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7163CB851D90C35F00DEEA5C /* PhotoPal.app */,
+				7163CB991D90C36000DEEA5C /* PhotoPalTests.xctest */,
+				7163CBA41D90C36000DEEA5C /* PhotoPalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7163CB871D90C35F00DEEA5C /* PhotoPal */ = {
+			isa = PBXGroup;
+			children = (
+				7163CBBE1D90E2FC00DEEA5C /* Model */,
+				7163CBBF1D90E30800DEEA5C /* View */,
+				7163CBC01D90E31600DEEA5C /* Controller */,
+				7163CBC11D90E32F00DEEA5C /* Supporting Files */,
+			);
+			path = PhotoPal;
+			sourceTree = "<group>";
+		};
+		7163CB9C1D90C36000DEEA5C /* PhotoPalTests */ = {
+			isa = PBXGroup;
+			children = (
+				7163CB9D1D90C36000DEEA5C /* PhotoPalTests.swift */,
+				7163CB9F1D90C36000DEEA5C /* Info.plist */,
+			);
+			path = PhotoPalTests;
+			sourceTree = "<group>";
+		};
+		7163CBA71D90C36000DEEA5C /* PhotoPalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7163CBA81D90C36000DEEA5C /* PhotoPalUITests.swift */,
+				7163CBAA1D90C36000DEEA5C /* Info.plist */,
+			);
+			path = PhotoPalUITests;
+			sourceTree = "<group>";
+		};
+		7163CBBE1D90E2FC00DEEA5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7163CBC61D90F15D00DEEA5C /* Media.swift */,
+				7163CBC21D90E87D00DEEA5C /* InstagramAPIClient.swift */,
+				7163CBC41D90EBAB00DEEA5C /* NativeAPIClient.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7163CBBF1D90E30800DEEA5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7163CBBA1D90E07300DEEA5C /* PhotoCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7163CBC01D90E31600DEEA5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7163CBB61D90C77C00DEEA5C /* PhotosCollectionViewController.swift */,
+				7163CBB81D90CEA400DEEA5C /* PhotoDetailViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7163CBC11D90E32F00DEEA5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7163CB881D90C35F00DEEA5C /* AppDelegate.swift */,
+				7163CB8C1D90C35F00DEEA5C /* Main.storyboard */,
+				7163CB911D90C35F00DEEA5C /* LaunchScreen.storyboard */,
+				7163CB8F1D90C35F00DEEA5C /* Assets.xcassets */,
+				7163CB941D90C35F00DEEA5C /* Info.plist */,
+				71E5ECA91D91004D00629268 /* Constants.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7163CB841D90C35F00DEEA5C /* PhotoPal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7163CBAD1D90C36000DEEA5C /* Build configuration list for PBXNativeTarget "PhotoPal" */;
+			buildPhases = (
+				2CE714EF778BFCD08F44FDE3 /* Check Pods Manifest.lock */,
+				7163CB811D90C35F00DEEA5C /* Sources */,
+				7163CB821D90C35F00DEEA5C /* Frameworks */,
+				7163CB831D90C35F00DEEA5C /* Resources */,
+				226DB236CA43FE8FFD7FDBA4 /* Embed Pods Frameworks */,
+				B9F5B4301C38F1324233FA8E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoPal;
+			productName = PhotoPal;
+			productReference = 7163CB851D90C35F00DEEA5C /* PhotoPal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7163CB981D90C36000DEEA5C /* PhotoPalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7163CBB01D90C36000DEEA5C /* Build configuration list for PBXNativeTarget "PhotoPalTests" */;
+			buildPhases = (
+				7163CB951D90C36000DEEA5C /* Sources */,
+				7163CB961D90C36000DEEA5C /* Frameworks */,
+				7163CB971D90C36000DEEA5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7163CB9B1D90C36000DEEA5C /* PBXTargetDependency */,
+			);
+			name = PhotoPalTests;
+			productName = PhotoPalTests;
+			productReference = 7163CB991D90C36000DEEA5C /* PhotoPalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7163CBA31D90C36000DEEA5C /* PhotoPalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7163CBB31D90C36000DEEA5C /* Build configuration list for PBXNativeTarget "PhotoPalUITests" */;
+			buildPhases = (
+				7163CBA01D90C36000DEEA5C /* Sources */,
+				7163CBA11D90C36000DEEA5C /* Frameworks */,
+				7163CBA21D90C36000DEEA5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7163CBA61D90C36000DEEA5C /* PBXTargetDependency */,
+			);
+			name = PhotoPalUITests;
+			productName = PhotoPalUITests;
+			productReference = 7163CBA41D90C36000DEEA5C /* PhotoPalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7163CB7D1D90C35F00DEEA5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "David Nadri";
+				TargetAttributes = {
+					7163CB841D90C35F00DEEA5C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					7163CB981D90C36000DEEA5C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 7163CB841D90C35F00DEEA5C;
+					};
+					7163CBA31D90C36000DEEA5C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 7163CB841D90C35F00DEEA5C;
+					};
+				};
+			};
+			buildConfigurationList = 7163CB801D90C35F00DEEA5C /* Build configuration list for PBXProject "PhotoPal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7163CB7C1D90C35F00DEEA5C;
+			productRefGroup = 7163CB861D90C35F00DEEA5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7163CB841D90C35F00DEEA5C /* PhotoPal */,
+				7163CB981D90C36000DEEA5C /* PhotoPalTests */,
+				7163CBA31D90C36000DEEA5C /* PhotoPalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7163CB831D90C35F00DEEA5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7163CB931D90C35F00DEEA5C /* LaunchScreen.storyboard in Resources */,
+				7163CB901D90C35F00DEEA5C /* Assets.xcassets in Resources */,
+				7163CB8E1D90C35F00DEEA5C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7163CB971D90C36000DEEA5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7163CBA21D90C36000DEEA5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		226DB236CA43FE8FFD7FDBA4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoPal/Pods-PhotoPal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CE714EF778BFCD08F44FDE3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B9F5B4301C38F1324233FA8E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoPal/Pods-PhotoPal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7163CB811D90C35F00DEEA5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7163CBC51D90EBAB00DEEA5C /* NativeAPIClient.swift in Sources */,
+				7163CBC31D90E87D00DEEA5C /* InstagramAPIClient.swift in Sources */,
+				7163CBBB1D90E07300DEEA5C /* PhotoCell.swift in Sources */,
+				7163CBB71D90C77C00DEEA5C /* PhotosCollectionViewController.swift in Sources */,
+				7163CBB91D90CEA400DEEA5C /* PhotoDetailViewController.swift in Sources */,
+				7163CB891D90C35F00DEEA5C /* AppDelegate.swift in Sources */,
+				7163CBC71D90F15D00DEEA5C /* Media.swift in Sources */,
+				71E5ECAB1D91070C00629268 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7163CB951D90C36000DEEA5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7163CB9E1D90C36000DEEA5C /* PhotoPalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7163CBA01D90C36000DEEA5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7163CBA91D90C36000DEEA5C /* PhotoPalUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7163CB9B1D90C36000DEEA5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7163CB841D90C35F00DEEA5C /* PhotoPal */;
+			targetProxy = 7163CB9A1D90C36000DEEA5C /* PBXContainerItemProxy */;
+		};
+		7163CBA61D90C36000DEEA5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7163CB841D90C35F00DEEA5C /* PhotoPal */;
+			targetProxy = 7163CBA51D90C36000DEEA5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7163CB8C1D90C35F00DEEA5C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7163CB8D1D90C35F00DEEA5C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7163CB911D90C35F00DEEA5C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7163CB921D90C35F00DEEA5C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7163CBAB1D90C36000DEEA5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7163CBAC1D90C36000DEEA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7163CBAE1D90C36000DEEA5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B7DE6471C2E01B0E70F25B8 /* Pods-PhotoPal.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PhotoPal/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Nadri.PhotoPal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7163CBAF1D90C36000DEEA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8297A5AB53D95173788F4965 /* Pods-PhotoPal.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PhotoPal/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Nadri.PhotoPal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7163CBB11D90C36000DEEA5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PhotoPalTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Nadri.PhotoPalTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoPal.app/PhotoPal";
+			};
+			name = Debug;
+		};
+		7163CBB21D90C36000DEEA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PhotoPalTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Nadri.PhotoPalTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoPal.app/PhotoPal";
+			};
+			name = Release;
+		};
+		7163CBB41D90C36000DEEA5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PhotoPalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Nadri.PhotoPalUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PhotoPal;
+			};
+			name = Debug;
+		};
+		7163CBB51D90C36000DEEA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PhotoPalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Nadri.PhotoPalUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PhotoPal;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7163CB801D90C35F00DEEA5C /* Build configuration list for PBXProject "PhotoPal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7163CBAB1D90C36000DEEA5C /* Debug */,
+				7163CBAC1D90C36000DEEA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7163CBAD1D90C36000DEEA5C /* Build configuration list for PBXNativeTarget "PhotoPal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7163CBAE1D90C36000DEEA5C /* Debug */,
+				7163CBAF1D90C36000DEEA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7163CBB01D90C36000DEEA5C /* Build configuration list for PBXNativeTarget "PhotoPalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7163CBB11D90C36000DEEA5C /* Debug */,
+				7163CBB21D90C36000DEEA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7163CBB31D90C36000DEEA5C /* Build configuration list for PBXNativeTarget "PhotoPalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7163CBB41D90C36000DEEA5C /* Debug */,
+				7163CBB51D90C36000DEEA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7163CB7D1D90C35F00DEEA5C /* Project object */;
+}
