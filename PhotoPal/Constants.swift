@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     
-    static let consumerKey = ""
+    static let consumerKey = "*"
     static let consumerSecret = ""
     
 }

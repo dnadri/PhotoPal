@@ -14,12 +14,12 @@
 		7163CB9E1D90C36000DEEA5C /* PhotoPalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CB9D1D90C36000DEEA5C /* PhotoPalTests.swift */; };
 		7163CBA91D90C36000DEEA5C /* PhotoPalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBA81D90C36000DEEA5C /* PhotoPalUITests.swift */; };
 		7163CBB71D90C77C00DEEA5C /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBB61D90C77C00DEEA5C /* PhotosCollectionViewController.swift */; };
-		7163CBB91D90CEA400DEEA5C /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBB81D90CEA400DEEA5C /* PhotoDetailViewController.swift */; };
 		7163CBBB1D90E07300DEEA5C /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBBA1D90E07300DEEA5C /* PhotoCell.swift */; };
 		7163CBC31D90E87D00DEEA5C /* InstagramAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBC21D90E87D00DEEA5C /* InstagramAPIClient.swift */; };
 		7163CBC51D90EBAB00DEEA5C /* NativeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBC41D90EBAB00DEEA5C /* NativeAPIClient.swift */; };
 		7163CBC71D90F15D00DEEA5C /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163CBC61D90F15D00DEEA5C /* Media.swift */; };
-		71E5ECAB1D91070C00629268 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5ECA91D91004D00629268 /* Constants.swift */; };
+		71EED9001D910C8A00011EB4 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EED8FF1D910C8A00011EB4 /* PhotoDetailViewController.swift */; };
+		71EED9011D910CAC00011EB4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5ECA91D91004D00629268 /* Constants.swift */; };
 		DA5636DF98B8ABCD695E3857 /* Pods_PhotoPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939B9DA8814148F3AD622B6B /* Pods_PhotoPal.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,12 +55,12 @@
 		7163CBA81D90C36000DEEA5C /* PhotoPalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPalUITests.swift; sourceTree = "<group>"; };
 		7163CBAA1D90C36000DEEA5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7163CBB61D90C77C00DEEA5C /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
-		7163CBB81D90CEA400DEEA5C /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoDetailViewController.swift; path = ../PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		7163CBBA1D90E07300DEEA5C /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		7163CBC21D90E87D00DEEA5C /* InstagramAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAPIClient.swift; sourceTree = "<group>"; };
 		7163CBC41D90EBAB00DEEA5C /* NativeAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAPIClient.swift; sourceTree = "<group>"; };
 		7163CBC61D90F15D00DEEA5C /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		71E5ECA91D91004D00629268 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		71EED8FF1D910C8A00011EB4 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		8297A5AB53D95173788F4965 /* Pods-PhotoPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoPal.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoPal/Pods-PhotoPal.release.xcconfig"; sourceTree = "<group>"; };
 		939B9DA8814148F3AD622B6B /* Pods_PhotoPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -181,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				7163CBB61D90C77C00DEEA5C /* PhotosCollectionViewController.swift */,
-				7163CBB81D90CEA400DEEA5C /* PhotoDetailViewController.swift */,
+				71EED8FF1D910C8A00011EB4 /* PhotoDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -385,10 +385,10 @@
 				7163CBC31D90E87D00DEEA5C /* InstagramAPIClient.swift in Sources */,
 				7163CBBB1D90E07300DEEA5C /* PhotoCell.swift in Sources */,
 				7163CBB71D90C77C00DEEA5C /* PhotosCollectionViewController.swift in Sources */,
-				7163CBB91D90CEA400DEEA5C /* PhotoDetailViewController.swift in Sources */,
 				7163CB891D90C35F00DEEA5C /* AppDelegate.swift in Sources */,
+				71EED9001D910C8A00011EB4 /* PhotoDetailViewController.swift in Sources */,
 				7163CBC71D90F15D00DEEA5C /* Media.swift in Sources */,
-				71E5ECAB1D91070C00629268 /* Constants.swift in Sources */,
+				71EED9011D910CAC00011EB4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
