@@ -10,17 +10,25 @@ import UIKit
 import OAuthSwift
 
 // MARK: handle callback url
-//extension AppDelegate {
-//    
-//    func applicationHandleOpenURL(url: NSURL) {
-//        if (url.host == "oauth-callback") {
-//            OAuthSwift.handleOpenURL(url)
-//        } else {
-//            // Instagram provider is the only one with your.bundle.id url schema.
-//            OAuthSwift.handleOpenURL(url)
-//        }
-//    }
-//}
+extension AppDelegate {
+    
+    func applicationHandleOpenURL(url: NSURL) {
+        print("AppDelegate: applicationHandleOpenURL...")
+        dispatch_async(dispatch_get_main_queue()) {
+            if (url.scheme == "David.Nadri-PhotoPal"){
+                // Go to PhotoCollection view
+                //OAuthSwift.handleOpenURL(url)
+                print("url.scheme...")
+            }
+        }
+        if (url.host == "oauth-callback") {
+            OAuthSwift.handleOpenURL(url)
+        } else {
+            // Instagram provider is the only one with your.bundle.id url schema.
+            OAuthSwift.handleOpenURL(url)
+        }
+    }
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -59,13 +67,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(application: UIApplication,
-                     openURL url: NSURL,
-                             sourceApplication: String?,
-                             annotation: AnyObject?) -> Bool {
-        print("AppDelegate: openURL...")
-        OAuth2Swift.handleOpenURL(url)
-        UIApplication.sharedApplication().keyWindow?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        applicationHandleOpenURL(url)
+        return true
+    }
+    
+    @available(iOS 9.0, *)
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        applicationHandleOpenURL(url)
         return true
     }
 
