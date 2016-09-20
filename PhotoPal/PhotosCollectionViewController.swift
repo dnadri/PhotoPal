@@ -30,10 +30,10 @@ class PhotosCollectionViewController: UICollectionViewController {
             consumerKey:    Constants.consumerKey,
             consumerSecret: Constants.consumerSecret,
             authorizeUrl:   "https://api.instagram.com/oauth/authorize",
-            responseType:   "token"
+            responseType:   "code"
         )
         oauth.authorizeWithCallbackURL(
-            NSURL(string: "oauth-swift://oauth-callback/instagram")!,
+            NSURL(string: "https://www.instagram.com/")!,
             scope: "",
             state: "INSTAGRAM",
             success: { credential, response, paramaters in
