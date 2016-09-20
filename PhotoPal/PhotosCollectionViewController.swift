@@ -50,6 +50,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         oauth.authorize_url_handler = WebViewController()
         print("authorized_url_handler...")
         // - TODO: Obtain access token then redirect to authenticated screen
+        // PhotoPal://oauth-callback
         oauth.authorizeWithCallbackURL(
             NSURL(string: "https://instagram.com/")!,
             scope: "",

@@ -22,6 +22,7 @@ extension AppDelegate {
             }
         }
         if (url.host == "oauth-callback") {
+            print("AppDelegate: oauth-callback")
             OAuthSwift.handleOpenURL(url)
         } else {
             // Instagram provider is the only one with your.bundle.id url schema.
