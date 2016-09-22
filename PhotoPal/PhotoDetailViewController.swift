@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Photos
 
 class PhotoDetailViewController: UIViewController {
     
-    var photo: Media?
+    @IBOutlet weak var photoDetailImageView: UIImageView!
+    
+    var photo: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        photoDetailImageView.image = photo
         
     }
     

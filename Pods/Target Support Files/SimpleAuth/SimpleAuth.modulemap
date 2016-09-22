@@ -1,0 +1,11 @@
+framework module SimpleAuth {
+  umbrella header "SimpleAuth-umbrella.h"
+
+  export *
+  module * { export * }
+
+  private header "SimpleAuthFoursquareWebLoginViewController.h"
+  private header "SimpleAuthFoursquareWebProvider.h"
+  private header "SimpleAuthInstagramLoginViewController.h"
+  private header "SimpleAuthInstagramProvider.h"
+}

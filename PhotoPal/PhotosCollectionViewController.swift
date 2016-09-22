@@ -7,12 +7,14 @@
 //
 
 import UIKit
-import OAuthSwift
+import SimpleAuth
 
 class PhotosCollectionViewController: UICollectionViewController {
-
-    var photos = [Media?]()
     
+    var accessToken: String?
+    var likedArray = NSArray()
+    let venueArray = NSMutableArray()
+    var photos = [AnyObject]()
     private let reuseIdentifier = "PhotoCell"
     let screenSize = UIScreen.mainScreen().bounds
     
@@ -26,7 +28,38 @@ class PhotosCollectionViewController: UICollectionViewController {
         layout.minimumLineSpacing = 1.0
         collectionView!.collectionViewLayout = layout
         
-        runOauth()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        self.accessToken = userDefaults.stringForKey("accessToken")
+        
+        if self.accessToken == nil {
+            // Get access token
+            SimpleAuth.authorize("foursquare-web", completion: {
+                (responseObject, error) in
+                
+                print("Authorizing...")
+                
+                if error != nil {
+                    print("Error: \(error.localizedDescription)")
+                    
+                } else {
+                    
+                    
+                    if let object = responseObject as? [String: AnyObject] {
+                        //print("responseObject: \(object)")
+                        self.accessToken = object["credentials"]?["token"] as? String
+                        print("accessToken: \(self.accessToken)")
+                        userDefaults.setObject(self.accessToken, forKey: "accessToken")
+                        self.refreshPhotos()
+                    }
+                }
+                
+            })
+            
+        } else {
+            // Use token
+            print("Access token available: \(self.accessToken!)")
+            refreshPhotos()
+        }
         
     }
     
@@ -34,34 +67,77 @@ class PhotosCollectionViewController: UICollectionViewController {
         super.viewWillAppear(true)
         
         //NativeAPIClient: retrieve photos
+
     }
     
-    func runOauth() {
-        let oauth = OAuth2Swift(
-            consumerKey:    Constants.consumerKey,
-            consumerSecret: Constants.consumerSecret,
-            authorizeUrl:   "https://api.instagram.com/oauth/authorize",
-            responseType:   "token"
-            // or
-            // accessTokenUrl: "https://api.instagram.com/oauth/access_token",
-            // responseType:   "code"
-        )
+    func refreshPhotos() {
         
-        oauth.authorize_url_handler = WebViewController()
-        print("authorized_url_handler...")
-        // - TODO: Obtain access token then redirect to authenticated screen
-        // PhotoPal://oauth-callback
-        oauth.authorizeWithCallbackURL(
-            NSURL(string: "https://instagram.com/")!,
-            scope: "",
-            state: "INSTAGRAM",
-            success: { credential, response, paramaters in
-                print("token: \(credential.oauth_token)")
-            },
-            failure: { error in
-                print("OAuth2 Error: \(error.localizedDescription)")
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: "https://api.foursquare.com/v2/users/self/venuelikes/?oauth_token=\(self.accessToken!)&v=\(Constants.Foursquare.DATA_VERSION_DATE)&m=\(Constants.Foursquare.DATA_FORMAT)")
+        print("url: \(url!)")
+        let request = NSURLRequest(URL: url!)
+        
+        var task = session.downloadTaskWithRequest(request, completionHandler: {
+            location, response, error in
+ 
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            } else {
+                
+                if let data = NSData(contentsOfURL: location!) {
+                    do {
+                        let json = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+                        print("json: \(json)")
+                        
+                        self.likedArray = json.valueForKeyPath("response.venues.items.id")! as! NSArray
+                        //self.venueArray = NSMutableArray()
+                        for id in self.likedArray {
+                            let venueURLString = "https://api.foursquare.com/v2/venues/\(id)?oauth_token=\(self.accessToken!)&v=\(Constants.Foursquare.DATA_VERSION_DATE)&m=\(Constants.Foursquare.DATA_FORMAT)"
+                            let venueURL = NSURL(string: venueURLString)
+                            let venueURLrequest = NSURLRequest(URL: venueURL!)
+                            let venueTask = session.downloadTaskWithRequest(venueURLrequest, completionHandler: {
+                                location, response, error in
+                                if let error = error {
+                                    print("Error: \(error.localizedDescription)")
+                                } else {
+                                    if let venueData = NSData(contentsOfURL: location!) {
+                                        do {
+                                            let venueJson = try NSJSONSerialization.JSONObjectWithData(venueData, options: [])
+                                            self.venueArray.addObject(venueJson)
+                                            
+                                            dispatch_async(dispatch_get_main_queue()) {
+                                                self.collectionView?.reloadData()
+                                            }
+                                            
+                                        } catch let error as NSError {
+                                            print("Error: \(error.localizedDescription)")
+                                        }
+                                    }
+                                }
+                            })
+                            venueTask.resume()
+                            
+                        }
+                        // store photos in the data source object
+                        //self.photos = ?
+                        //self.photos = myJSON.valueForKeyPath("data")! as! [AnyObject]
+                        
+                        // reload collection view on main thread
+//                        dispatch_async(dispatch_get_main_queue()) {
+//                            self.collectionView?.reloadData()
+//                        }
+                        
+                    } catch let error as NSError {
+                        print("Error: \(error.localizedDescription)")
+                    }
+                }
+                
             }
-        )
+            
+        })
+        
+        task.resume()
+
     }
     
     // - MARK: UICollectionViewDelegate
@@ -71,14 +147,17 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.venueArray.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PhotoCell
         
-        //cell.photoImageView.image = ?
+        cell.backgroundColor = UIColor.lightGrayColor()
+        
+        cell.photoData = self.venueArray[indexPath.row] as! NSDictionary
+        
         
         return cell
         
@@ -100,20 +179,33 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationVC = segue.destinationViewController as! PhotoDetailViewController
-        if let indexPath = getIndexPathForSelectedCell() {
-            destinationVC.photo = photos[indexPath.row]
+        if segue.identifier == "showDetail" {
+            var indexPaths = (collectionView?.indexPathsForSelectedItems())! as
+                [NSIndexPath]
+            let destinationVC = segue.destinationViewController as! UINavigationController
+            let detailVC = destinationVC.topViewController as! PhotoDetailViewController
+            //detailVC.photo = photos[indexPaths[0].row] as! Media
+            collectionView?.deselectItemAtIndexPath(indexPaths[0], animated:
+                false)
+            
         }
+
     }
     
-    func getIndexPathForSelectedCell() -> NSIndexPath? {
-        
-        var indexPath: NSIndexPath?
-
-        if collectionView?.indexPathsForSelectedItems()?.count > 0 {
-            indexPath = collectionView?.indexPathsForSelectedItems()?[0]
-        }
-        return indexPath
+//    func getIndexPathForSelectedCell() -> NSIndexPath? {
+//        
+//        var indexPath: NSIndexPath?
+//
+//        if collectionView?.indexPathsForSelectedItems()?.count > 0 {
+//            indexPath = collectionView?.indexPathsForSelectedItems()?[0]
+//        }
+//        return indexPath
+//    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+
     
 }

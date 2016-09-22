@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1D619A7952B44363EA0EC663'
+               BlueprintIdentifier = '7BE09AC55888B0841C943447'
                BlueprintName = 'Pods-PhotoPal'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_PhotoPal.framework'>

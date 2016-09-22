@@ -7,29 +7,7 @@
 //
 
 import UIKit
-import OAuthSwift
-
-// MARK: handle callback url
-extension AppDelegate {
-    
-    func applicationHandleOpenURL(url: NSURL) {
-        print("AppDelegate: applicationHandleOpenURL...")
-        dispatch_async(dispatch_get_main_queue()) {
-            if (url.scheme == "David.Nadri-PhotoPal"){
-                // Go to PhotoCollection view
-                //OAuthSwift.handleOpenURL(url)
-                print("url.scheme...")
-            }
-        }
-        if (url.host == "oauth-callback") {
-            print("AppDelegate: oauth-callback")
-            OAuthSwift.handleOpenURL(url)
-        } else {
-            // Instagram provider is the only one with your.bundle.id url schema.
-            OAuthSwift.handleOpenURL(url)
-        }
-    }
-}
+import SimpleAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,9 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
-        UINavigationBar.appearance().tintColor = UIColor.blackColor()
-        UIBarButtonItem.appearance().tintColor = UIColor.blackColor()
+        // RedirectURI: photopal://auth/instagram
+        SimpleAuth.configuration()["foursquare-web"] = [
+            // photopal://auth/instagram
+            "client_id": Constants.Foursquare.cliendID,
+            SimpleAuthRedirectURIKey: Constants.Foursquare.redirectURI
+        ]
+        
+        // Configuring the Navigation Bar appearance globally
+        let navBarFont = UIFont(name: "AppleSDGothicNeo-Bold", size: 20.0)
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: navBarFont!]
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "AppleSDGothicNeo-Medium", size: 18.0)!], forState: UIControlState.Normal)
+        
+        //HEX: #0070ba
+        //darkcyan
+        //rgb(0,112,186)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 112.0/255.0, blue: 186.0/255.0, alpha: 1.0)
+        UIBarButtonItem.appearance().tintColor = UIColor.whiteColor()
         
         return true
     }
@@ -69,13 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        applicationHandleOpenURL(url)
-        return true
-    }
-    
-    @available(iOS 9.0, *)
-    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        applicationHandleOpenURL(url)
         return true
     }
 

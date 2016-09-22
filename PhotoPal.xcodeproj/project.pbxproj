@@ -60,6 +60,7 @@
 		7163CBC21D90E87D00DEEA5C /* InstagramAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAPIClient.swift; sourceTree = "<group>"; };
 		7163CBC41D90EBAB00DEEA5C /* NativeAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAPIClient.swift; sourceTree = "<group>"; };
 		7163CBC61D90F15D00DEEA5C /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		71AD6C9F1D943F160099A468 /* PhotoPalBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPalBridgingHeader.h; sourceTree = "<group>"; };
 		71E5ECA91D91004D00629268 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		71EED8FF1D910C8A00011EB4 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		71EED9041D91B36A00011EB4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 				7163CB8F1D90C35F00DEEA5C /* Assets.xcassets */,
 				7163CB941D90C35F00DEEA5C /* Info.plist */,
 				71E5ECA91D91004D00629268 /* Constants.swift */,
+				71AD6C9F1D943F160099A468 /* PhotoPalBridgingHeader.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -535,10 +537,12 @@
 			baseConfigurationReference = 4B7DE6471C2E01B0E70F25B8 /* Pods-PhotoPal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = PhotoPal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "David-Nadri.PhotoPal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = PhotoPal/PhotoPalBridgingHeader.h;
 			};
 			name = Debug;
 		};
@@ -547,10 +551,12 @@
 			baseConfigurationReference = 8297A5AB53D95173788F4965 /* Pods-PhotoPal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = PhotoPal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "David-Nadri.PhotoPal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = PhotoPal/PhotoPalBridgingHeader.h;
 			};
 			name = Release;
 		};

@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>OAuthSwift.xcscheme</key>
+		<key>CMDQueryStringSerialization.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ISO8601.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -14,15 +19,60 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Result.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SimpleAuth-SimpleAuth.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SimpleAuth.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>45935B91DF0442390E2CA6DEEF68AE99</key>
+		<key>0EA1AF77E281BFE665CC0031A7EFE6A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C94F22FC672FFEFA95736402326EEDBE</key>
+		<key>1166E991A8E46BD7BA633C6E605C3839</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>18C2E5950F9E49F35BD28FDDF38989EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>37FB6686674C7C687FA9FE79C7A0195D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9AF5CDE957670DCFFF410F2DBF61592C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9FE9615A8F6DC0119D0CB7C0F5F2FEA6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F380235F9AD2276DD8FD5B3C2672E2F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -84,8 +84,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-PhotoPal/OAuthSwift.framework"
+  install_framework "Pods-PhotoPal/CMDQueryStringSerialization.framework"
+  install_framework "Pods-PhotoPal/ISO8601.framework"
+  install_framework "Pods-PhotoPal/ReactiveCocoa.framework"
+  install_framework "Pods-PhotoPal/Result.framework"
+  install_framework "Pods-PhotoPal/SimpleAuth.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-PhotoPal/OAuthSwift.framework"
+  install_framework "Pods-PhotoPal/CMDQueryStringSerialization.framework"
+  install_framework "Pods-PhotoPal/ISO8601.framework"
+  install_framework "Pods-PhotoPal/ReactiveCocoa.framework"
+  install_framework "Pods-PhotoPal/Result.framework"
+  install_framework "Pods-PhotoPal/SimpleAuth.framework"
 fi
